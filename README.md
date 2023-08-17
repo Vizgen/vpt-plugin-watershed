@@ -1,4 +1,5 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Coverage Status](https://coveralls.io/repos/github/Vizgen/vpt-plugin-watershed/badge.svg?t=2ISBNa)](https://coveralls.io/github/Vizgen/vpt-plugin-watershed)
 
 # Vizgen Post-processing Tool Watershed Plugin
 
