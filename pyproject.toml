@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "vpt_plugin_watershed"
-version = "0.0.2"
+version = "1.0.0"
 description = "Watershed Plugin for VPT"
 license = "Apache-2.0"
 authors = ["Vizgen <techsupport@vizgen.com>"]

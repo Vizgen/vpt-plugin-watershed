@@ -2,6 +2,16 @@
 
 <!--next-version-placeholder-->
 
+## v1.0.0 (2023-08-17)
+
+### Feature
+
+* Initial Release ([`2151dd3`](https://github.com/Vizgen/vpt-plugin-watershed/commit/2151dd372c80649fa892293cc6d3390b5471defb))
+
+### Breaking
+
+* Initial release ([`2151dd3`](https://github.com/Vizgen/vpt-plugin-watershed/commit/2151dd372c80649fa892293cc6d3390b5471defb))
+
 ## v0.0.2 (2023-08-17)
 
 ### Documentation
