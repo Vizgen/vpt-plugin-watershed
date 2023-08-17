@@ -1,0 +1,76 @@
+[tool.poetry]
+name = "vpt_plugin_watershed"
+version = "0.0.0"
+description = "Watershed Plugin for VPT"
+license = "Apache-2.0"
+authors = ["Vizgen <techsupport@vizgen.com>"]
+maintainers = ["Timothy Wiggin <timothy.wiggin@vizgen.com>"]
+readme = "README.md"
+# homepage = ""
+repository = "https://github.com/Vizgen/vizgen-postprocessing"
+documentation = "https://vizgen.github.io/vpt-plugin-watershed/"
+# keywords = ""
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Natural Language :: English",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: Microsoft :: Windows",
+    "License :: OSI Approved :: Apache Software License",
+    "Topic :: Scientific/Engineering :: Image Processing",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+]
+packages = [{ include = "vpt_plugin_watershed*", from = "src" }]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.11"
+numpy = "1.22.4"
+opencv-python-headless = "4.6.0.66"
+pandas = "1.4.3"
+pyclustering = "0.10.1.2"
+scikit-image = "0.19.3"
+scipy = "1.8.1"
+shapely = "2.0"
+stardist = "0.8.3"
+tensorflow = "2.9.1"
+tensorflow-io-gcs-filesystem = "0.30.0"
+vpt_core = ">=1.0.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.0"
+pytest-cov = "^4.0.0"
+flake8 = "^6.0.0"
+black = "^23.1.0"
+isort = "^5.12.0"
+mypy = "^1.0.0"
+pre-commit = "^3.0.4"
+
+[tool.poetry.group.deploy.dependencies]
+python-semantic-release = "^7.32.2"
+sphinx-argparse = "^0.4.0"
+sphinx-view = "^0.3.1"
+myst-nb = { version = "^0.17.1", python = "^3.9" }
+sphinx-autoapi = "^2.0.0"
+sphinx-rtd-theme = "^1.1.1"
+
+
+[[tool.poetry.source]]
+name = "PyPI"
+priority = "primary"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.semantic_release]
+version_variable = "pyproject.toml:version"
+branch = "develop"
+changelog_file = "CHANGELOG.md"
+build_command = "poetry build"
+dist_path = "dist/"
+upload_to_release = true
+upload_to_pypi = false
+remove_dist = false
+patch_without_tag = true
