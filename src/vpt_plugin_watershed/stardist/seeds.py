@@ -34,7 +34,7 @@ class StardistSeedsExtractor:
             from stardist.models import StarDist2D
 
             fs, path = filesystem_path_split(model_path)
-            assert fs.protocol == "file"  # Stardist only supports local filesystem
+            assert "file" in fs.protocol  # Stardist only supports local filesystem
             path_parts = path.split(fs.sep)
             parent_path, model_name = fs.sep.join(path_parts[:-1]), path_parts[-1]
 
