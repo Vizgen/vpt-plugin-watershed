@@ -11,6 +11,11 @@ from vpt_plugin_watershed.stardist.seeds import StardistResult, StardistSeedsExt
 from vpt_plugin_watershed.watershed import key_entity_fill_channel, key_seed_channel, key_stardist_model
 from vpt_plugin_watershed.watershed.entity import get_detected_entity, Entity
 from vpt_plugin_watershed.watershed.seeds import prepare_watershed_images, separate_merged_seeds
+from tenacity import (
+    retry,
+    wait_random_exponential,
+    stop_after_attempt,
+)
 
 
 def to_sd_extractor_params(params: Dict) -> Dict:
@@ -21,6 +26,7 @@ def to_sd_extractor_params(params: Dict) -> Dict:
     }
 
 
+@retry(wait=wait_random_exponential(min=1, max=100), stop=stop_after_attempt(6))
 def get_watershed_seeds(images: ImageSet, segmentation_parameters: Dict, entity: Entity):
     # Load the seed image
     seeds = np.array(images.as_list(segmentation_parameters.get(key_seed_channel, "")))
